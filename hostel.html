@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chavan Girl's Hostel, Talsande</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff0f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #b30059;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .facilities,
+        .form-section,
+        .contact,
+        .gallery {
+            background-color: #ffe6f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .gallery {
+            text-align: center;
+            background-color: #fff5f9;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .carousel img {
+            max-width: 80%;
+            max-height: 400px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #b30059;
+        }
+
+        .carousel button {
+            background-color: #b30059;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .carousel button:hover {
+            background-color: #8a0040;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #b30059;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Chavan Girl's Hostel</h1>
+        <p>Shahunagar, Talsande</p>
+    </header>
+
+    <section class="facilities">
+        <h2>Facilities</h2>
+        <ul>
+            <li>Free Wi-Fi</li>
+            <li>Secure Environment</li>
+            <li>24×7 Electricity Backup</li>
+            <li>Aqua Mineral Drinking Water</li>
+            <li>Common Bathrooms</li>
+            <li>24-hour hot and cold water facility for bathing</li>
+            <li>Vegetarian and non-vegetarian food facilities</li>
+            <li>Free tea and breakfast will be provided by the hostel every Sunday</li>
+            <li>Walkable distance from DYP Campus</li>
+        </ul>
+    </section>
+
+    <section class="gallery">
+        <h2>Hostel Gallery</h2>
+        <div class="carousel">
+            <button onclick="prevImage()">⟨</button>
+            <img id="carouselImage" src="image1.jpg" alt="Hostel Image" />
+            <button onclick="nextImage()">⟩</button>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>📞 Sukumar Chavan: <a href="tel:8668647196">8668647196</a><br>
+            📞 Digambar Chavan: <a href="tel:9921389095">9921389095</a></p>
+        <p>📍 Location: Shahunagar, Talsande</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Chavan Girl's Hostel. All rights reserved.
+    </footer>
+
+    <script>
+        const images = [
+            "Images/img_1.jpg", "Images/img_2.jpg", "Images/img_3.jpg", "Images/img_4.jpg",
+            "Images/img_5.jpg", "Images/img_6.jpg", "Images/img_7.jpg", "Images/img_8.jpg",
+            "Images/img_9.jpg", "Images/img_10.jpg", "Images/img_11.jpg", "Images/img_12.jpg"
+        ];
+
+
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            const img = document.getElementById("carouselImage");
+            img.src = images[index];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        window.onload = () => showImage(currentImageIndex);
+    </script>
+
+</body>
+
+</html>
